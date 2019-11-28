@@ -1,12 +1,12 @@
 'use strict';
 
 const fileChanger = require('./file-changer');
-const io = require("socket.io-client");
-const socket = io.connect("http://localhost:3000");
+const io = require('socket.io-client');
+const socket = io.connect('http://localhost:3000');
 
 // Listen for a 'connect' event, and call the anon function specified
-socket.on("connect", () => {
-  console.log("App.js >> connected!");
+socket.on('connect', () => {
+  console.log('App.js >> connected!');
 });
 
 /*
@@ -18,7 +18,7 @@ socket.on('close', () => {
 });
 
 setTimeout(function() {
-  socket.close()
+  socket.close();
 }, 2000);
 
 let file = process.argv.slice(2).shift();

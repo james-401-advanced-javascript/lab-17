@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 // const app = require("express")();
 // const server = require("http").Server(app);
@@ -6,20 +6,20 @@
 
 // server.listen(3000);
 
-const io = require("socket.io")(3000);
+const io = require('socket.io')(3000);
 
-io.on("connect", () => {
-  console.log("server.js connected");
+io.on('connect', () => {
+  console.log('server.js connected');
 });
 
-io.on("connection", socket => {
+io.on('connection', socket => {
   console.log(`Socket ${socket.id} is connected.`);
 
-  socket.on("save", payload => {
-    socket.broadcast.emit("save", payload);
+  socket.on('save', payload => {
+    socket.broadcast.emit('save', payload);
   });
 
-  socket.on("err", payload => {
-    socket.broadcast.emit("err", payload);
+  socket.on('err', payload => {
+    socket.broadcast.emit('err', payload);
   });
 });
